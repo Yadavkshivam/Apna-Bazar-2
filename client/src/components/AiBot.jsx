@@ -3,6 +3,7 @@ import { IoSend, IoClose } from "react-icons/io5";
 import { FaRobot } from "react-icons/fa";
 import { BsStars } from "react-icons/bs";
 import { HiSparkles } from "react-icons/hi";
+import { baseURL } from "../common/SummaryApi";
 
 export default function AiBot() {
   const [open, setOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function AiBot() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:8080/api/bot/ask", {
+      const res = await fetch(`${baseURL}/api/bot/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),

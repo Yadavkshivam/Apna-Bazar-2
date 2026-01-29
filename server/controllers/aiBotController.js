@@ -114,7 +114,8 @@ Remember: Be helpful, be human, make user feel valued, and NEVER use stars or as
 
         res.json({ reply });
     } catch (error) {
-        console.error("AI Bot Error:", error);
-        res.status(500).json({ error: "Bot failed to respond" });
+        console.error("AI Bot Error:", error.message);
+        console.error("Full Error:", error);
+        res.status(500).json({ error: "Bot failed to respond", details: error.message });
     }
 };
