@@ -17,9 +17,13 @@ import orderRouter from "./route/order.route.js";
 import aiBotRoutes from "./route/aiBot.route.js";
 
 const app = express();
+
+// Remove trailing slash from FRONTEND_URL for CORS
+const frontendUrl = (process.env.FRONTEND_URL || "http://localhost:5173").replace(/\/+$/, '');
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: frontendUrl,
     credentials: true,
   }),
 );
