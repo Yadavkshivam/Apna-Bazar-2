@@ -127,7 +127,9 @@ function DraggableBar() {
           
           {/* Text */}
           <div className="flex flex-col">
-            <span className="text-green-800 font-bold text-sm leading-tight">Notes</span>
+            <a href="https://note-pad-2-sepia.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <span className="text-green-800 font-bold text-sm leading-tight">Notes</span>
+            </a>
             <span className="text-green-600 text-[10px] font-medium opacity-75">Drag me!</span>
           </div>
           

@@ -162,12 +162,9 @@ const LiveAuction = () => {
               >
                 👨‍🌾 Farmer Dashboard
               </Link>
-              <Link
-                to="/auction/my-bids"
-                className="px-6 py-3 bg-white/20 hover:bg-white/30 text-white font-bold rounded-xl transition-all duration-300 border border-white/30 text-center"
-              >
-                📋 My Bids
-              </Link>
+              
+             
+            
             </div>
           </div>
 

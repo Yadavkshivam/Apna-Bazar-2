@@ -126,8 +126,10 @@ const Home = () => {
     </div>
 
     {/* Draggable Bar */}
-    <div className="fixed z-50">
+    <div className="fixed z-50">   
+    
       <DraggableBar />
+      
     </div>
 
     {/* Features Section */}

@@ -1,64 +1,73 @@
-<<<<<<< HEAD
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
-=======
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#E8F5E9"/>
-      <stop offset="100%" stop-color="#C8E6C9"/>
-    </linearGradient>
-  </defs>
+<!-- filepath: /Users/shivamyadav/Desktop/Apna-Bazar-Main/client/public/vite.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#22c55e" opacity="0.1"/>
   
-  <!-- Background -->
-  <circle cx="32" cy="32" r="30" fill="url(#bg)" stroke="#2E7D32" stroke-width="2"/>
+  <!-- Sun -->
+  <circle cx="150" cy="50" r="15" fill="#fbbf24"/>
+  <path d="M150 30 L150 25 M150 75 L150 70 M130 50 L125 50 M175 50 L170 50 M135 35 L131 31 M165 35 L169 31 M135 65 L131 69 M165 65 L169 69" 
+        stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
   
-  <!-- Ground -->
-  <ellipse cx="32" cy="54" rx="28" ry="6" fill="#8B4513"/>
+  <!-- Field/Ground -->
+  <ellipse cx="100" cy="160" rx="80" ry="15" fill="#86efac" opacity="0.3"/>
+  <path d="M30 160 Q50 155, 70 160 T110 160 T150 160 T190 160" 
+        stroke="#22c55e" stroke-width="2" fill="none" opacity="0.5"/>
   
-  <!-- Tractor -->
-  <g>
-    <!-- Tractor body -->
-    <rect x="20" y="32" width="20" height="12" rx="2" fill="#E53935"/>
-    <!-- Hood -->
-    <rect x="36" y="36" width="10" height="8" rx="1" fill="#E53935"/>
-    <!-- Cabin window -->
-    <rect x="22" y="34" width="8" height="6" rx="1" fill="#81D4FA"/>
-    <!-- Exhaust pipe -->
-    <rect x="42" y="30" width="2" height="6" fill="#424242"/>
-    <!-- Smoke puff -->
-    <circle cx="43" cy="28" r="2" fill="#9E9E9E" opacity="0.6"/>
-    
-    <!-- Big back wheel -->
-    <circle cx="26" cy="46" r="8" fill="#212121"/>
-    <circle cx="26" cy="46" r="5" fill="#424242"/>
-    <circle cx="26" cy="46" r="2" fill="#757575"/>
-    
-    <!-- Small front wheel -->
-    <circle cx="42" cy="46" r="5" fill="#212121"/>
-    <circle cx="42" cy="46" r="3" fill="#424242"/>
-    <circle cx="42" cy="46" r="1.5" fill="#757575"/>
+  <!-- Tractor Body -->
+  <rect x="70" y="120" width="50" height="30" rx="5" fill="#dc2626"/>
+  <rect x="75" y="115" width="15" height="5" rx="2" fill="#991b1b"/>
+  
+  <!-- Tractor Cabin -->
+  <path d="M85 120 L85 100 L110 100 L110 120 Z" fill="#fca5a5" opacity="0.8"/>
+  <rect x="88" y="103" width="8" height="8" fill="#60a5fa" opacity="0.6"/>
+  <rect x="99" y="103" width="8" height="8" fill="#60a5fa" opacity="0.6"/>
+  
+  <!-- Exhaust Pipe -->
+  <rect x="115" y="110" width="3" height="15" rx="1" fill="#4b5563"/>
+  <ellipse cx="116.5" cy="108" rx="4" ry="2" fill="#6b7280"/>
+  
+  <!-- Front Wheel (Small) -->
+  <circle cx="85" cy="150" r="10" fill="#1f2937"/>
+  <circle cx="85" cy="150" r="7" fill="#374151"/>
+  <circle cx="85" cy="150" r="3" fill="#6b7280"/>
+  
+  <!-- Back Wheel (Large) -->
+  <circle cx="110" cy="150" r="18" fill="#1f2937"/>
+  <circle cx="110" cy="150" r="14" fill="#374151"/>
+  <circle cx="110" cy="150" r="8" fill="#6b7280"/>
+  <circle cx="110" cy="150" r="3" fill="#9ca3af"/>
+  
+  <!-- Wheel Spokes -->
+  <line x1="110" y1="138" x2="110" y2="162" stroke="#6b7280" stroke-width="1"/>
+  <line x1="98" y1="150" x2="122" y2="150" stroke="#6b7280" stroke-width="1"/>
+  
+  <!-- Farmer Figure -->
+  <circle cx="95" cy="108" r="6" fill="#fbbf24"/>
+  <path d="M95 114 L95 125" stroke="#4b5563" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Wheat/Crop -->
+  <g transform="translate(130, 130)">
+    <path d="M0 20 Q-2 15, 0 10 Q2 15, 0 20" fill="#fbbf24"/>
+    <path d="M-1 10 L-3 8 M1 10 L3 8 M-1 13 L-3 11 M1 13 L3 11 M-1 16 L-3 14 M1 16 L3 14" 
+          stroke="#f59e0b" stroke-width="0.5"/>
+    <line x1="0" y1="20" x2="0" y2="30" stroke="#16a34a" stroke-width="1"/>
   </g>
   
-  <!-- Vegetables -->
-  <g>
-    <!-- Tomato -->
-    <circle cx="12" cy="24" r="6" fill="#F44336"/>
-    <path d="M10 18 Q12 20 14 18" stroke="#4CAF50" stroke-width="1.5" fill="none"/>
-    <ellipse cx="12" cy="18" rx="2" ry="1" fill="#4CAF50"/>
-    
-    <!-- Carrot -->
-    <path d="M52 12 L56 26 L48 26 Z" fill="#FF9800"/>
-    <path d="M50 12 Q52 10 54 12" stroke="#4CAF50" stroke-width="1.5" fill="none"/>
-    <path d="M51 11 Q52 8 53 11" stroke="#4CAF50" stroke-width="1.5" fill="none"/>
-    
-    <!-- Brinjal/Eggplant -->
-    <ellipse cx="8" cy="40" rx="4" ry="6" fill="#7B1FA2"/>
-    <ellipse cx="8" cy="34" rx="2" ry="1.5" fill="#4CAF50"/>
-    
-    <!-- Cabbage/Lettuce -->
-    <circle cx="54" cy="38" r="5" fill="#66BB6A"/>
-    <circle cx="54" cy="38" r="3" fill="#81C784"/>
-    <circle cx="54" cy="38" r="1.5" fill="#A5D6A7"/>
+  <g transform="translate(145, 135)">
+    <path d="M0 15 Q-2 12, 0 8 Q2 12, 0 15" fill="#fbbf24"/>
+    <path d="M-1 8 L-3 6 M1 8 L3 6 M-1 10 L-3 8 M1 10 L3 8 M-1 12 L-3 10 M1 12 L3 10" 
+          stroke="#f59e0b" stroke-width="0.5"/>
+    <line x1="0" y1="15" x2="0" y2="25" stroke="#16a34a" stroke-width="1"/>
   </g>
+  
+  <g transform="translate(138, 138)">
+    <path d="M0 12 Q-1.5 10, 0 7 Q1.5 10, 0 12" fill="#fbbf24"/>
+    <path d="M-0.5 7 L-2 5 M0.5 7 L2 5 M-0.5 9 L-2 7 M0.5 9 L2 7" 
+          stroke="#f59e0b" stroke-width="0.5"/>
+    <line x1="0" y1="12" x2="0" y2="20" stroke="#16a34a" stroke-width="1"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="14" font-weight="bold" 
+        fill="#16a34a" text-anchor="middle">Apna Bazar</text>
 </svg>
->>>>>>> 721ff1ee (Initial commit: Apna Bazar farmer marketplace)

@@ -6,9 +6,10 @@ import SummaryApi from '../common/SummaryApi'
 import DisplayTable from '../components/DisplayTable'
 import { createColumnHelper } from '@tanstack/react-table'
 import ViewImage from '../components/ViewImage'
-import { LuPencil } from "react-icons/lu";
-import { MdDelete  } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import { HiPencil } from "react-icons/hi";
+import { HiSparkles } from "react-icons/hi";
+import { FaCubes, FaPlus } from "react-icons/fa";
 import EditSubCategory from '../components/EditSubCategory'
 import CofirmBox from '../components/CofirmBox'
 import toast from 'react-hot-toast'
@@ -55,17 +56,16 @@ const SubCategoryPage = () => {
 
   const column = [
     columnHelper.accessor('name',{
-      header : "Name"
+      header : () => <span className="text-gray-700 font-semibold">Name</span>
     }),
     columnHelper.accessor('image',{
-      header : "Image",
+      header : () => <span className="text-gray-700 font-semibold">Image</span>,
       cell : ({row})=>{
-        console.log("row",)
         return <div className='flex justify-center items-center'>
             <img 
                 src={row.original.image}
                 alt={row.original.name}
-                className='w-8 h-8 cursor-pointer'
+                className='w-10 h-10 rounded-lg object-cover cursor-pointer border-2 border-gray-100 hover:border-green-400 transition-all hover:scale-110'
                 onClick={()=>{
                   setImageURL(row.original.image)
                 }}      
@@ -74,37 +74,37 @@ const SubCategoryPage = () => {
       }
     }),
     columnHelper.accessor("category",{
-       header : "Category",
+       header : () => <span className="text-gray-700 font-semibold">Category</span>,
        cell : ({row})=>{
         return(
-          <>
+          <div className='flex flex-wrap gap-1 justify-center'>
             {
               row.original.category.map((c,index)=>{
                 return(
-                  <p key={c._id+"table"} className='shadow-md px-1 inline-block'>{c.name}</p>
+                  <span key={c._id+"table"} className='bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-medium'>{c.name}</span>
                 )
               })
             }
-          </>
+          </div>
         )
        }
     }),
     columnHelper.accessor("_id",{
-      header : "Action",
+      header : () => <span className="text-gray-700 font-semibold">Action</span>,
       cell : ({row})=>{
         return(
-          <div className='flex items-center justify-center gap-3'>
+          <div className='flex items-center justify-center gap-2'>
               <button onClick={()=>{
                   setOpenEdit(true)
                   setEditData(row.original)
-              }} className='p-2 bg-green-100 rounded-full hover:text-green-600'>
-                  <HiPencil size={20}/>
+              }} className='p-2 bg-green-100 rounded-lg hover:bg-green-200 text-green-600 transition-colors'>
+                  <HiPencil size={18}/>
               </button>
               <button onClick={()=>{
                 setOpenDeleteConfirmBox(true)
                 setDeleteSubCategory(row.original)
-              }} className='p-2 bg-red-100 rounded-full text-red-500 hover:text-red-600'>
-                  <MdDelete  size={20}/>
+              }} className='p-2 bg-red-100 rounded-lg hover:bg-red-200 text-red-500 transition-colors'>
+                  <MdDelete size={18}/>
               </button>
           </div>
         )
@@ -131,55 +131,70 @@ const SubCategoryPage = () => {
         AxiosToastError(error)
       }
   }
+
   return (
-    <section className=''>
-        <div className='p-2   bg-white shadow-md flex items-center justify-between'>
-            <h2 className='font-semibold'>Sub Category</h2>
-            <button onClick={()=>setOpenAddSubCategory(true)} className='text-sm border border-primary-200 hover:bg-primary-200 px-3 py-1 rounded'>Add Sub Category</button>
+    <section className='min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 p-4 md:p-6'>
+        {/* Header */}
+        <div className='bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg p-4 md:p-6 mb-6 border border-white/50'>
+            <div className='flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4'>
+                <div className='flex items-center gap-3'>
+                    <div className='w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg'>
+                        <FaCubes className='text-white text-xl' />
+                    </div>
+                    <div>
+                        <h2 className='text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-2'>
+                            Sub Categories
+                            <HiSparkles className='text-yellow-500 animate-pulse' />
+                        </h2>
+                        <p className='text-gray-500 text-sm'>Manage your product sub categories</p>
+                    </div>
+                </div>
+                <button 
+                    onClick={()=>setOpenAddSubCategory(true)} 
+                    className='flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-emerald-300/50 hover:scale-105 active:scale-95 transition-all duration-300'
+                >
+                    <FaPlus /> Add Sub Category
+                </button>
+            </div>
         </div>
 
-        <div className='overflow-auto w-full max-w-[95vw]'>
-            <DisplayTable
-                data={data}
-                column={column}
-            />
+        {/* Table Card */}
+        <div className='bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 overflow-hidden'>
+            <div className='overflow-x-auto'>
+                <DisplayTable
+                    data={data}
+                    column={column}
+                />
+            </div>
         </div>
 
-
-        {
-          openAddSubCategory && (
+        {/* Modals */}
+        {openAddSubCategory && (
             <UploadSubCategoryModel 
-             
               close={()=>setOpenAddSubCategory(false)}
               fetchData={fetchSubCategory}
-             
             />
-          )
-        }
+        )}
 
-        {
-          ImageURL &&
-          <ViewImage url={ImageURL} close={()=>setImageURL("")}/>
-        }
+        {ImageURL && (
+            <ViewImage url={ImageURL} close={()=>setImageURL("")}/>
+        )}
 
-        {
-          openEdit && 
-          <EditSubCategory 
-            data={editData} 
-            close={()=>setOpenEdit(false)}
-            fetchData={fetchSubCategory}
-          />
-        }
+        {openEdit && (
+            <EditSubCategory 
+              data={editData} 
+              close={()=>setOpenEdit(false)}
+              fetchData={fetchSubCategory}
+            />
+        )}
 
-        {
-          openDeleteConfirmBox && (
+        {openDeleteConfirmBox && (
             <CofirmBox 
               cancel={()=>setOpenDeleteConfirmBox(false)}
               close={()=>setOpenDeleteConfirmBox(false)}
               confirm={handleDeleteSubCategory}
             />
-          )
-        }
+        )}
     </section>
   )
 }

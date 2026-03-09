@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import toast from 'react-hot-toast'
+import AxiosToastError from '../utils/AxiosToastError'
 
 const AuctionRoom = () => {
   const { auctionId } = useParams()
@@ -220,7 +222,7 @@ const AuctionRoom = () => {
                   <div className="text-green-600 text-sm font-medium">✓ Verified Farmer</div>
                 </div>
               </div>
-              <button className="w-full py-3 bg-green-100 text-green-700 font-semibold rounded-xl hover:bg-green-200 transition-colors">
+              <button onClick={()=>toast.success("Farmer will connect you ") }className="w-full py-3 bg-green-100 text-green-700 font-semibold rounded-xl hover:bg-green-200 transition-colors">
                 📞 Contact Farmer
               </button>
             </div>
