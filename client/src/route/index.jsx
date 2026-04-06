@@ -23,11 +23,14 @@ import CartMobile from "../pages/CartMobile";
 import CheckoutPage from "../pages/CheckoutPage";
 import Success from "../pages/Success";
 import Cancel from "../pages/Cancel";
-
 import LiveAuction from "../pages/LiveAuction";
 import AuctionRoom from "../pages/AuctionRoom";
 import FarmerAuctionDashboard from "../pages/FarmerAuctionDashboard";
 import OrderSuccess from "../pages/OrderSuccess";
+import Expert from '../pages/Expert';
+import ExpertBooking from '../pages/ExpertBooking';
+import MyConsultations from '../pages/MyConsultations';
+import ExpertDashboard from '../pages/ExpertDashboard';
 
 
 const router = createBrowserRouter([
@@ -64,7 +67,7 @@ const router = createBrowserRouter([
                 element : <ResetPassword/>
             },
             {
-                path : "user",
+                path : 'user',
                 element : <UserMenuMobile/>
             },
             {
@@ -98,6 +101,10 @@ const router = createBrowserRouter([
                     {
                         path : 'product',
                         element : <AdminPermision><ProductAdmin/></AdminPermision>
+                    },
+                    {
+                        path : 'expert-dashboard',
+                        element : <ExpertDashboard/>
                     }
                 ]
             },
@@ -129,7 +136,6 @@ const router = createBrowserRouter([
             {
                 path : 'cancel',
                 element : <Cancel/>
-
             },
             {
                 path : 'auction',
@@ -146,7 +152,18 @@ const router = createBrowserRouter([
             {
                 path : 'auction/order-success',
                 element : <OrderSuccess/>
-
+            },
+            {
+                path: 'Expert',
+                element: <Expert />
+            },
+            {
+                path: 'expert/book/:expertId',
+                element: <ExpertBooking />
+            },
+            {
+                path: 'my-consultations',
+                element: <MyConsultations />
             }
         ]
     }

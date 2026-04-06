@@ -49,6 +49,15 @@ const AuctionRoom = () => {
     { id: 3, sender: 'Farmer', message: 'Moisture content is 12%, which is ideal.', time: '10:03 AM', type: 'farmer' },
     { id: 4, sender: 'System', message: 'New bid: ₹2,450 by Sharma Traders', time: '10:05 AM', type: 'system' },
   ])
+  const [link, setLink] = useState('');
+
+  const generateMeetingLink = () => {
+    const meetingId = `meeting-${Date.now()}`;
+    const generatedLink = `https://meet.jit.si/${meetingId}`;  
+    setLink(generatedLink);                                      
+    toast.success('Meeting link generated!');
+  };
+
 
   const [newMessage, setNewMessage] = useState('')
   const [showPlaceOrder, setShowPlaceOrder] = useState(false)
@@ -341,7 +350,39 @@ const AuctionRoom = () => {
             <div className="bg-white rounded-3xl shadow-lg border border-purple-100 h-full flex flex-col">
               <div className="p-5 border-b border-purple-100">
                 <h3 className="font-bold text-gray-800">💬 Live Chat</h3>
-                <p className="text-gray-500 text-sm">Ask questions to the farmer</p>
+
+                {/* Video Meeting Link */}
+                <div className="mt-2 flex flex-col gap-2">
+                  {!link ? (
+                    <button
+                      onClick={generateMeetingLink}
+                      className="text-sm px-3 py-1.5 bg-purple-100 hover:bg-purple-200 text-purple-700 font-medium rounded-lg transition-colors w-fit"
+                    >
+                      🎥 Generate Meeting Link
+                    </button>
+                  ) : (
+                    <p className="text-gray-500 text-sm flex items-center gap-2 flex-wrap">
+                      🎥 Video Meeting:
+                      <a
+                        href={link}                   // ← use {link} not 'meetingLink'
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline font-medium break-all"
+                      >
+                        {link}
+                      </a>
+                      <button
+                        onClick={() => {
+                          navigator.clipboard.writeText(link);
+                          toast.success('Link copied!');
+                        }}
+                        className="text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg"
+                      >
+                        📋 Copy
+                      </button>
+                    </p>
+                  )}
+                </div>
               </div>
               
               {/* Messages */}

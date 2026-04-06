@@ -58,6 +58,7 @@ const FarmerAuctionDashboard = () => {
     },
   ])
 
+
   const categories = ['Grains', 'Vegetables', 'Fruits', 'Pulses', 'Spices', 'Dairy', 'Other']
 
   const handleInputChange = (e) => {
@@ -128,6 +129,7 @@ const FarmerAuctionDashboard = () => {
                 {myAuctions.filter(a => a.status === 'live').length}
               </div>
               <div className="text-green-200 text-sm">Live Auctions</div>
+             
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
               <div className="text-2xl font-bold text-lime-400">

@@ -15,6 +15,7 @@ import cartRouter from "./route/cart.route.js";
 import addressRouter from "./route/address.route.js";
 import orderRouter from "./route/order.route.js";
 import aiBotRoutes from "./route/aiBot.route.js";
+import sessionBookingRoute from "./route/sessionBooking.route.js";
 
 const app = express();
 
@@ -55,6 +56,7 @@ app.use("/api/cart", cartRouter);
 app.use("/api/address", addressRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/bot", aiBotRoutes);
+app.use("/api/session-booking", sessionBookingRoute);
 
 connectDB().then(() => {
   app.listen(PORT, () => {

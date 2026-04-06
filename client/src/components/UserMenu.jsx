@@ -71,22 +71,32 @@ const UserMenu = ({close}) => {
   {/* EXPERT MENUS */}
   {user.role === "EXPERT" && (
     <>
-       <Link onClick={handleClose} to={"/dashboard/product"} className='px-2 hover:bg-orange-200 py-1'>Services</Link>
-      <Link onClick={handleClose} to={"/dashboard/category"} className='px-2 hover:bg-orange-200 py-1'>Category</Link>
-      <Link onClick={handleClose} to={"/dashboard/subcategory"} className='px-2 hover:bg-orange-200 py-1'>Sub Category</Link>
-      <Link onClick={handleClose} to={"/dashboard/upload-product"} className='px-2 hover:bg-orange-200 py-1'>Upload Image</Link>
-   
-      <Link onClick={handleClose} to={"/dashboard/myorders"} className='px-2 hover:bg-orange-200 py-1'>My Orders</Link>
-      <Link onClick={handleClose} to={"/dashboard/address"} className='px-2 hover:bg-orange-200 py-1'>Save Address</Link>
+      <Link
+        onClick={handleClose}
+        to={"/dashboard/expert-dashboard"}
+        className='px-2 hover:bg-green-100 py-1 rounded flex items-center gap-2'
+      >
+        🌿 Expert Dashboard
+      </Link>
+      <Link
+        onClick={handleClose}
+        to={"/my-consultations"}
+        className='px-2 hover:bg-green-100 py-1 rounded flex items-center gap-2'
+      >
+        📋 My Sessions
+      </Link>
     </>
   )}
 
-  {/* NORMAL USERS */}
-  {user.role === "USER" && (
-    <>
-      <Link onClick={handleClose} to={"/dashboard/myorders"} className='px-2 hover:bg-orange-200 py-1'>My Orders</Link>
-      <Link onClick={handleClose} to={"/dashboard/address"} className='px-2 hover:bg-orange-200 py-1'>Save Address</Link>
-    </>
+  {/* USER MENUS - My Consultations for all users */}
+  {user.role !== "EXPERT" && user._id && (
+    <Link
+      onClick={handleClose}
+      to={"/my-consultations"}
+      className='px-2 hover:bg-orange-200 py-1 rounded flex items-center gap-2'
+    >
+      📅 My Consultations
+    </Link>
   )}
 
   {/* LOGOUT BUTTON (common for all) */}

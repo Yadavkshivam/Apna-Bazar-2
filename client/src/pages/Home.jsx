@@ -153,10 +153,16 @@ const Home = () => {
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-200 to-transparent rounded-bl-full opacity-50"></div>
             <div className="relative z-10">
               <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                👨‍🌾
+                📈
               </div>
-              <h3 className="text-xl font-bold text-green-900 mb-2">Create Account</h3>
-              <p className="text-gray-600 text-sm">Register as a farmer or buyer in minutes and start your journey</p>
+<button
+  onClick={() => window.open("https://crop-insight.vercel.app/", "_blank")}
+>
+  <h3 className="text-xl font-bold text-green-900 mb-2">
+    AI-Crop-Insights
+  </h3>
+</button>
+              <p className="text-gray-600 text-sm">Get a chance to know weather the plan crop is suitable in your field ..?🤔</p>
             </div>
           </div>
           
@@ -165,10 +171,14 @@ const Home = () => {
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-yellow-200 to-transparent rounded-bl-full opacity-50"></div>
             <div className="relative z-10">
               <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                📦
+                👨🏻‍⚕️
               </div>
-              <h3 className="text-xl font-bold text-green-900 mb-2">List Your Crops</h3>
-              <p className="text-gray-600 text-sm">Upload photos, set prices, and showcase your fresh produce</p>
+              <button onClick={() => navigate('/Expert')}>
+                <h3 className="text-xl font-bold text-green-900 mb-2">
+                  Contact Experts
+                </h3>
+              </button>
+              <p className="text-gray-600 text-sm">Upload photos, book your slot for personal guidance from expert.</p>
             </div>
           </div>
           
